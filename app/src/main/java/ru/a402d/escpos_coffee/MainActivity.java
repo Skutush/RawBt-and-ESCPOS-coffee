@@ -24,6 +24,10 @@ import com.github.anastaciocintra.escpos.Style;
 import com.github.anastaciocintra.escpos.barcode.BarCode;
 import com.github.anastaciocintra.escpos.barcode.PDF417;
 import com.github.anastaciocintra.escpos.barcode.QRCode;
+import com.github.anastaciocintra.escpos.image.Bitonal;
+import com.github.anastaciocintra.escpos.image.BitonalThreshold;
+import com.github.anastaciocintra.escpos.image.EscPosImage;
+import com.github.anastaciocintra.escpos.image.BitImageWrapper;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -263,6 +267,9 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    private URL getURL(String imageName) throws MalformedURLException {
+        return new URL( Uri.fromFile(new File("//android_asset/"+imageName)).toString());
+    }
 
     public void test_BitImage(View button) {
         try {
@@ -272,7 +279,6 @@ public class MainActivity extends AppCompatActivity {
 
             // ------------------ DO ----------------
 
-            escpos.writeLF("The AWT package is not supported in Android.");
 
             // ------------------ /DO ----------------
 
@@ -348,7 +354,6 @@ public class MainActivity extends AppCompatActivity {
 
             // ------------------ DO ----------------
 
-            escpos.writeLF("The AWT package is not supported in Android.");
 
             // ------------------ /DO ----------------
 
@@ -376,7 +381,6 @@ public class MainActivity extends AppCompatActivity {
 
             // ------------------ DO ----------------
 
-            escpos.writeLF("The AWT package is not supported in Android.");
 
             // ------------------ /DO ----------------
 
